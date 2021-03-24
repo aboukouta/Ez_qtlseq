@@ -1,0 +1,57 @@
+ref_seq_path: /work2/project/gafl/ReDD/DG-PHYTOM/genomes/Mic1.0.fasta
+
+p1_reads_dir: /work2/project/gafl/ReDD/DG-PHYTOM/RenSeq
+p2_reads_dir: /work2/project/gafl/ReDD/DG-PHYTOM/RenSeq
+R_reads_dir: /work2/project/gafl/ReDD/DG-PHYTOM/RenSeq
+S_reads_dir: /work2/project/gafl/ReDD/DG-PHYTOM/RenSeq
+
+p1_reads1:
+  - VL-T7_S7_L001_R1_001.fastq.gz
+# if dedup_reads = False => reads in PE without IMU
+# if dedup_reads = True  => SE and R2 in p1_reads2 = IMU codes
+# if only SE reads => leave the *_reads2: empty
+p1_reads2:
+  - VL-T7_S7_L001_R2_001.fastq.gz
+
+p2_reads1:
+  - VL-T8_S8_L001_R1_001.fastq.gz
+p2_reads2:
+  - VL-T8_S8_L001_R2_001.fastq.gz
+
+R_reads1:
+  - VL-T10R_S10_L001_R1_001.fastq.gz
+  - VL-T9R_S9_L001_R1_001.fastq.gz
+R_reads2:
+  - VL-T10R_S10_L001_R2_001.fastq.gz
+  - VL-T9R_S9_L001_R2_001.fastq.gz
+
+S_reads1:
+  - VL-T11S_S11_L001_R1_001.fastq.gz
+  - VL-T12S_S12_L001_R1_001.fastq.gz
+S_reads2:
+  - VL-T11S_S11_L001_R2_001.fastq.gz
+  - VL-T12S_S12_L001_R2_001.fastq.gz
+
+
+# do we have n6 information to remove PCR duplicates?
+dedup_reads: False
+
+# parameters for calling snps in parents with freebayes
+parentsMinCoverage: 15
+parentsMinObservationsToCall: 5
+
+# number of individuals in the bulks
+R_bulk_size: 48
+S_bulk_size: 48
+
+# filtering in R analysis
+min_depth_in_bulk: 10
+max_depth_in_bulk: 1400
+
+# the Takagi analysis is a simulation, this is the # of times the simulation is
+# repeated
+nb_takagi_reps: 10000
+window_size: 1000000
+filter_threshold: 0.1
+false_discovery_rate_G: 0.1
+

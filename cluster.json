@@ -1,0 +1,35 @@
+{
+    "__default__" : {
+      "jobname"      : "{rule}",
+      "time"           : "6:00:00",
+      "cpus-per-task"  : 1,
+      "mem-per-cpu-mb" : "6g",
+      "output"    : "logs/%A.{rule}.out"
+    },
+
+    "map_with_bwa" : {
+      "cpus-per-task"  : 10,
+      "mem-per-cpu-mb" : "24g"
+    },
+
+    "call_fb_for_parent" : {
+      "cpus-per-task"  : 8,
+      "mem-per-cpu-mb" : 8000
+    },
+
+    "call_fb_for_bulks" : {
+      "cpus-per-task"  : 10,
+      "mem-per-cpu-mb" : 8000
+    },
+
+    "bam_to_bai" : {
+      "cpus-per-task"  : 1,
+      "mem-per-cpu-mb" : "8g"
+    },
+
+    "do_qtlseqR" : {
+      "cpus-per-task"  : 1,
+      "mem-per-cpu-mb" : "4g"
+    }
+}
+
